@@ -7,6 +7,6 @@ while read brand_id brand_name; do
 done < brands.tsv
 
 while read device_id device_name brand_name; do
-  echo ${device_id} id_of ${device_name} is_produced_by ${brand_name} of_id ${brand_id_map[$brand_name]}
+  printf ${brand_id_map[$brand_name]}'\t'${device_id}'\n' >> manufactures-via-ids.tsv
 done < manufactures.tsv
 
