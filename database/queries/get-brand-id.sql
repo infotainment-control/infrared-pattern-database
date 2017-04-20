@@ -1,0 +1,1 @@
+select brand_id from brands where brand_name="Sony";
