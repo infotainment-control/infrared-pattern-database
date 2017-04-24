@@ -10,7 +10,7 @@ standardize () {
 
   pwd -P
 
-  while read device_id command_term; do
+  while IFS=$'\t' read device_id command_term; do
     entry=$(grep -i -m 1 "^${command_term}," ${map_file})
     if [ ${entry} ]; then
       IFS=',' read raw_command standard <<< ${entry}
